@@ -1,0 +1,18 @@
+<div class="component">
+    <div class="form">
+        <input [(ngModel)]="id"> <br>
+        <input type="text" value="{{ id }}" readonly> <br>
+
+        <select [(ngModel)]="choix" (change)="onChange(choix)">
+            <option *ngFor="let pokemon of dataFromServer" [ngValue]="pokemon">{{ pokemon.name }}</option>
+        </select>
+
+        <button (click)="onClick()">Go</button>
+    </div>
+
+    @if (showInfo()) {
+    <ng-container>
+        <app-poke-info [info]="this.dataToShow" />
+    </ng-container>
+    }
+</div>

@@ -1,0 +1,7 @@
+<h3>{{ info?.name }}</h3>
+<h3>Abilities</h3>
+<ul>
+    @for(abilitie of info?.abilities; track abilitie.ability) {
+    <li>{{ abilitie.ability?.name }}</li>
+    }
+</ul>
